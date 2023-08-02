@@ -29,7 +29,7 @@ Start the server
   npm run start
 
   # yarn
-  yarn start
+  yarn dev
 ```
 
 ## Environment Variables
