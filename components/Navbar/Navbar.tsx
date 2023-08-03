@@ -34,6 +34,11 @@ export function Navbar() {
         </div>
 
         <div className={styles.navRight}>
+          {address && (
+            <Link href="/create" className={styles.buttonLink}>
+              Create Marketplace
+            </Link>
+          )}
           <div className={styles.navConnect}>
             <ConnectWallet theme="dark" btnTitle="Connect Wallet" />
           </div>
