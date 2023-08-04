@@ -7,7 +7,6 @@ import {
   useGrantRole,
 } from "@thirdweb-dev/react";
 import React, { FormEvent, useState } from "react";
-import Container from "../components/Container/Container";
 
 export default function Create() {
   const roleToGrant =
@@ -19,29 +18,26 @@ export default function Create() {
     // Get data from the form.
     const data = {
       collectionAddress: (event.target as any).collectionAddress.value,
-      marketplaceName: (event.target as any).marketplaceName.value,
     };
 
-    const sdk = useSDK();
+    // const sdk = useSDK();
 
-    const tx = async function deployContract() {
-      sdk?.deployer.deployMarketplaceV3({
-        name: data.marketplaceName,
-      });
-    };
+    // const tx = async function deployContract() {
+    //   sdk?.deployer.deployMarketplaceV3({
+    //     data.collectionAddress,
+    //   });
+    // };
   };
 
   return (
-    <Container maxWidth="lg">
+    <div>
       <h1>Create your marketplace contract</h1>
       <p>Create a collection first on thirdweb.</p>
       <form onSubmit={handleSubmit}>
         <label className="label">Collection Address</label>
         <input type="text" name="collectionAddress" />
-        <label className="name">Marketplace Name</label>
-        <input type="text" name="marketplaceName" />
         <button>Create Marketplace</button>
       </form>
-    </Container>
+    </div>
   );
 }
