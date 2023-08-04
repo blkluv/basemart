@@ -1,74 +1,43 @@
 import type { NextPage } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Carousel from "../components/Carousel/Carousel";
+import Card from "../components/Card/Card";
 
 /**
  * Landing page with a simple gradient background and a hero asset.
  * Free to customize as you see fit.
  */
 const Home: NextPage = () => {
+  const images = [
+    "/nft_placeholder.png",
+    "/hero-asset.png",
+    "/nft_placeholder.png",
+    "/nft_placeholder.png",
+  ];
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <div className={styles.hero}>
-          <div className={styles.heroBackground}>
-            <div className={styles.heroBackgroundInner}>
-              <Image
-                src="/hero-gradient.png"
-                width={1390}
-                height={1390}
-                alt="Background gradient from red to blue"
-                quality={100}
-                className={styles.gradient}
-              />
-            </div>
-          </div>
-          <div className={styles.heroAssetFrame}>
-            <Image
-              src="/hero-asset.png"
-              width={860}
-              height={540}
-              alt="Hero asset, NFT marketplace"
-              quality={100}
-              className={styles.heroAsset}
-            />
-          </div>
-          <div className={styles.heroBodyContainer}>
-            <div className={styles.heroBody}>
-              <h1 className={styles.heroTitle}>
-                <span className={styles.heroTitleGradient}>
-                  Build NFT Marketplaces
-                </span>
-                <br />
-                faster than ever.
-              </h1>
-              <p className={styles.heroSubtitle}>
-                <Link
-                  className={styles.link}
-                  href="https://thirdweb.com"
-                  target="_blank"
-                >
-                  thirdweb
-                </Link>{" "}
-                gives you the tools you need to create audited, performant, and
-                flexible NFT marketplaces in <b>hours</b>, <i>not months</i>.
-              </p>
-
-              <div className={styles.heroCtaContainer}>
-                <Link className={styles.heroCta} href="/buy">
-                  Get Started
-                </Link>
-                <Link
-                  className={styles.secondaryCta}
-                  href="https://github.com/thirdweb-example/marketplace-v3"
-                  target="_blank"
-                >
-                  GitHub
-                </Link>
-              </div>
-            </div>
-          </div>
+    <div className="container mx-auto">
+      <div className="flex justify-center">
+        <Carousel />
+      </div>
+      <div className="w-full max-w-5xl h-min md:h-96 mt-10">
+        <div>
+          <h2 className="text-xl font-semibold">Trending Collections</h2>
+        </div>
+        <div className="flex flex-row justify-between gap-2">
+          <Card
+            collectionName="Village Creatures"
+            collectionPrice={5}
+            collectionImage="/placeholder_1.png"
+          />
+          <Card
+            collectionName="Himalaya"
+            collectionPrice={5}
+            collectionImage="/placeholder_2.png"
+          />
+          <Card
+            collectionName="Nakimigos"
+            collectionPrice={5}
+            collectionImage="/placeholder_3.png"
+          />
         </div>
       </div>
     </div>
