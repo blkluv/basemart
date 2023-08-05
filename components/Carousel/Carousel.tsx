@@ -46,7 +46,7 @@ export default function Carousel() {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000); // Auto slide every 5 seconds
+    const interval = setInterval(nextSlide, 10000);
     return () => clearInterval(interval);
   }, [active]);
 
@@ -54,7 +54,7 @@ export default function Carousel() {
     <div className="carousel w-full max-w-7xl h-min md:h-96 flex flex-col-reverse md:flex-row rounded-2xl md:rounded-3xl overflow-hidden relative">
       <button
         onClick={prevSlide}
-        className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
+        className="relative left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-black z-20 bg-white hover:bg-gray-100 py-2 px-4 border border-gray-400 rounded shadow"
       >
         {"<"}
       </button>
@@ -94,18 +94,18 @@ export default function Carousel() {
       </div>
       <button
         onClick={nextSlide}
-        className="absolute right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
+        className="bg-white absolute right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-black z-20 relative left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-black z-20 bg-white hover:bg-gray-100 py-2 px-4 border border-gray-400 rounded shadow"
       >
         {">"}
       </button>
       {/* Pagination */}
-      <div className="absolute bottom-0 flex justify-center w-full mt-8">
+      <div className="absolute bottom-0 flex justify-center w-full">
         {collections.map((_, index) => (
           <span
             key={index}
             onClick={() => setActive(index)}
-            className={`h-2 w-6 mx-1 rounded-full cursor-pointer ${
-              index === active ? "bg-black" : "bg-gray-400"
+            className={`h-2 w-24 mx-1 rounded-full cursor-pointer ${
+              index === active ? "bg-black" : "bg-gray-300"
             }`}
           />
         ))}

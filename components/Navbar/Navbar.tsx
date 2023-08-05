@@ -13,7 +13,7 @@ export function Navbar() {
 
   return (
     <div className="container mx-auto my-5">
-      <nav className="flex justify-between">
+      <nav className="flex justify-between items-center">
         <div className="flex-row gap-2">
           <Link href="/" className="text-2xl font-extrabold">
             BASED
@@ -25,31 +25,21 @@ export function Navbar() {
           <SearchBar />
         </div>
 
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 items-center">
           {address && (
             <Link
               className="flex align-center gap-1 text-lg"
               href="/create"
               passHref
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                {/* ... (SVG path data) */}
-              </svg>
               Create Marketplace
             </Link>
           )}
-          <div className={styles.navConnect}>
+          <div>
             <ConnectWallet theme="light" btnTitle="Connect Wallet" />
           </div>
           {address && (
-            <Link className={styles.link} href={`/profile/${address}`} passHref>
+            <Link href={`/profile/${address}`} passHref>
               <Image
                 className={styles.profileImage}
                 src="/user-icon.png"
