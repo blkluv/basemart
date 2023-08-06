@@ -14,7 +14,7 @@ const Home: NextPage = () => {
     "/nft_placeholder.png",
   ];
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4">
       <div className="flex justify-center">
         <Carousel />
       </div>
