@@ -12,8 +12,8 @@ export function Navbar() {
   const address = useAddress();
 
   return (
-    <div className="container mx-auto my-5">
-      <nav className="flex justify-between items-center">
+    <div className="container px-4 mx-auto my-5 relative ">
+      <nav className="flex justify-between items-center h-[60px]">
         <div className="flex-row gap-2">
           <Link href="/" className="text-2xl font-extrabold">
             BASED
