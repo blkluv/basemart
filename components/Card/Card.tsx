@@ -6,27 +6,33 @@ type Props = {
   collectionPrice: number;
 };
 
-export default function Card({
+const CardComponent: React.FC<Props> = ({
   collectionName,
   collectionImage,
   collectionPrice,
-}: Props) {
+}) => {
   return (
-    <div className="max-w-md max-h-sm bg-white border border-gray-200 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img className="p-10 rounded:2xl" src={collectionImage} alt="" />
-      </a>
-      <div className="ml-10 pb-3 pt-1">
-        <a href="#">
-          <h5 className="mb-2 text-lg font-bold">{collectionName}</h5>
-          <h5 className="text-xs tracking-tight text-gray-400 dark:text-white">
-            Floor Price
-          </h5>
-        </a>
-        <p className="text-base font-bold dark:text-gray-400">
+    <div className="h-96 bg-white shadow-md rounded-lg overflow-hidden">
+      <div className="relative w-80 h-52">
+        <Image
+          src={collectionImage}
+          alt="Product Image"
+          layout="fill"
+          objectFit="cover"
+          className="rounded max-w-full h-auto align-middle border-none"
+        />
+      </div>
+      <div className="p-4">
+        <h2 className="text-lg font-semibold text-gray-800">
+          {collectionName}
+        </h2>
+        <p className="text-sm text-gray-500 mt-1">Floor Price</p>
+        <p className="text-xl font-semibold text-black-600">
           {collectionPrice} ETH
         </p>
       </div>
     </div>
   );
-}
+};
+
+export default CardComponent;

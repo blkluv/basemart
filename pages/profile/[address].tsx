@@ -26,7 +26,7 @@ const [randomColor1, randomColor2, randomColor3, randomColor4] = [
 
 export default function ProfilePage() {
   const router = useRouter();
-  const [tab, setTab] = useState<"nfts" | "listings" | "auctions">("nfts");
+  const [tab, setTab] = useState<"nfts" | "listings" | "history">("nfts");
 
   const { contract: nftCollection } = useContract(NFT_COLLECTION_ADDRESS);
 
@@ -76,29 +76,47 @@ export default function ProfilePage() {
         </h1>
       </div>
 
-      <div className={styles.tabs}>
-        <h3
-          className={`${styles.tab} 
-        ${tab === "nfts" ? styles.activeTab : ""}`}
-          onClick={() => setTab("nfts")}
-        >
-          NFTs
-        </h3>
-        <h3
-          className={`${styles.tab} 
-        ${tab === "listings" ? styles.activeTab : ""}`}
-          onClick={() => setTab("listings")}
-        >
-          Listings
-        </h3>
-        <h3
-          className={`${styles.tab}
-        ${tab === "auctions" ? styles.activeTab : ""}`}
-          onClick={() => setTab("auctions")}
-        >
-          Auctions
-        </h3>
-      </div>
+      <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        <li className="mr-2">
+          <a
+            href="#"
+            className={`inline-block px-4 py-3 ${
+              tab === "nfts"
+                ? "text-black bg-white rounded-lg active"
+                : "rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+            }`}
+            onClick={() => setTab("nfts")}
+          >
+            NFTs
+          </a>
+        </li>
+        <li className="mr-2">
+          <a
+            href="#"
+            className={`inline-block px-4 py-3 ${
+              tab === "listings"
+                ? "text-black bg-white rounded-lg active"
+                : "rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+            }`}
+            onClick={() => setTab("listings")}
+          >
+            Listings
+          </a>
+        </li>
+        <li className="mr-2">
+          <a
+            href="#"
+            className={`inline-block px-4 py-3 ${
+              tab === "history"
+                ? "text-black bg-white rounded-lg active"
+                : "rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+            }`}
+            onClick={() => setTab("history")}
+          >
+            Auctions
+          </a>
+        </li>
+      </ul>
 
       <div
         className={`${
@@ -130,7 +148,7 @@ export default function ProfilePage() {
 
       <div
         className={`${
-          tab === "auctions" ? styles.activeTabContent : styles.tabContent
+          tab === "history" ? styles.activeTabContent : styles.tabContent
         }`}
       >
         {loadingAuctions ? (
