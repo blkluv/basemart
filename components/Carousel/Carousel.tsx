@@ -72,7 +72,7 @@ export default function Carousel() {
         </svg>
       </button>
       {/* Text */}
-      <div className="left bg-white w-full md:w-2/5 h-full rounded-t-none rounded-l-2xl rounded-r-2xl md:rounded-l-3xl md:rounded-r-none flex items-left justify-center flex-col px-12 py-8 md:py-4">
+      <div className="left bg-white w-full md:w-2/5 h-full rounded-t-none rounded-l-2xl rounded-r-2xl md:rounded-l-3xl md:rounded-r-none flex items-left justify-center flex-col px-4 py-8 sm:px-12 md:py-4">
         <span className="tag uppercase text-gray-400 text-xs">
           Featured Collection
         </span>
