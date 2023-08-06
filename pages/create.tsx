@@ -30,7 +30,7 @@ export default function Create() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Create your marketplace contract</h1>
       <p>Create a collection first on thirdweb.</p>
       <form onSubmit={handleSubmit}>

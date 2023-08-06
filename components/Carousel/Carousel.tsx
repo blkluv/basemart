@@ -94,7 +94,7 @@ export default function Carousel() {
       </div>
       <button
         onClick={nextSlide}
-        className="bg-white absolute right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-black z-20 relative left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-black z-20 bg-white hover:bg-gray-100 py-2 px-4 border border-gray-400 rounded shadow"
+        className="bg-white right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-black z-20 relative left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-black bg-white hover:bg-gray-100 py-2 px-4 border border-gray-400 rounded shadow"
       >
         {">"}
       </button>
