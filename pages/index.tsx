@@ -19,10 +19,10 @@ const Home: NextPage = () => {
         <Carousel />
       </div>
       <div className="w-full max-w-5xl h-min md:h-96 mt-10">
-        <div>
+        <div className="flex flex-row justify-center lg:justify-start mt-24 mb-4">
           <h2 className="text-xl font-semibold">Trending Collections</h2>
         </div>
-        <div className="flex flex-row justify-between gap-2">
+        <div className="flex flex-row flex-wrap justify-center gap-2">
           <Card
             collectionName="Village Creatures"
             collectionPrice={5}
